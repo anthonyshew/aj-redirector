@@ -81,19 +81,6 @@ export async function getAllPostsWithSlug() {
   return extractPostEntries(entries)
 }
 
-export async function getAllPostsForHome(preview) {
-  const entries = await fetchGraphQL(
-    `query {
-      postCollection(order: date_DESC, preview: ${preview ? 'true' : 'false'}) {
-        items {
-          ${POST_GRAPHQL_FIELDS}
-        }
-      }
-    }`,
-    preview
-  )
-  return extractPostEntries(entries)
-}
 
 export async function getPostAndMorePosts(slug, preview) {
   const entry = await fetchGraphQL(

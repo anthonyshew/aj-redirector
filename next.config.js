@@ -1,5 +1,1 @@
-module.exports = {
-  images: {
-    loader: 'custom',
-  },
-}
+module.exports = {};
